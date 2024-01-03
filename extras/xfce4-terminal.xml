@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfce4-terminal" version="1.0">
+  <property name="misc-show-unsafe-paste-dialog" type="bool" value="false"/>
+  <property name="font-name" type="string" value="Consolas 14"/>
+  <property name="cell-width-scale" type="double" value="1"/>
+  <property name="cell-height-scale" type="double" value="1.2000000000000002"/>
+  <property name="color-use-theme" type="bool" value="false"/>
+  <property name="misc-menubar-default" type="bool" value="false"/>
+  <property name="color-foreground" type="string" value="#dededddddada"/>
+  <property name="color-background" type="string" value="#010016152727"/>
+  <property name="color-background-vary" type="bool" value="false"/>
+  <property name="color-cursor-foreground" type="string" value=""/>
+  <property name="color-cursor" type="string" value=""/>
+  <property name="color-cursor-use-default" type="bool" value="true"/>
+  <property name="color-selection" type="string" value=""/>
+  <property name="color-selection-background" type="string" value=""/>
+  <property name="color-selection-use-default" type="bool" value="true"/>
+  <property name="color-bold" type="string" value=""/>
+  <property name="color-bold-use-default" type="bool" value="true"/>
+  <property name="color-palette" type="string" value="rgb(29,59,83);rgb(252,81,78);rgb(161,205,94);rgb(227,209,138);rgb(130,170,255);rgb(68,55,251);rgb(127,219,202);rgb(161,170,184);rgb(124,143,143);rgb(255,88,116);rgb(33,199,168);rgb(236,196,141);rgb(130,170,255);rgb(72,27,248);rgb(127,219,202);rgb(214,222,235)"/>
+  <property name="color-bold-is-bright" type="bool" value="true"/>
+  <property name="tab-activity-color" type="string" value="#aa0000"/>
+  <property name="scrolling-lines" type="uint" value="4096"/>
+  <property name="misc-default-geometry" type="string" value="91x40"/>
+  <property name="title-mode" type="string" value="TERMINAL_TITLE_REPLACE"/>
+  <property name="dropdown-always-show-tabs" type="bool" value="false"/>
+  <property name="use-default-working-dir" type="bool" value="false"/>
+</channel>
