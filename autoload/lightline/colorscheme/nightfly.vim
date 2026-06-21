@@ -9,7 +9,7 @@ let s:stone_blue = ['#252c3f', 236]
 let s:dark_blue  = ['#092236', 234]
 let s:blue       = ['#82aaff', 111]
 let s:emerald    = ['#21c7a8', 37]
-let s:purple     = ['#ae81ff', 135]
+let s:purple     = ['#481BF8', 135]
 let s:tan        = ['#ecc48d', 180]
 let s:watermelon = ['#ff5874', 161]
 

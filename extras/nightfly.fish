@@ -15,7 +15,7 @@ set -g fish_color_escape 7c8f8f
 set -g fish_color_history_current c3ccdc --background=1d3b53
 set -g fish_color_host d6deeb
 set -g fish_color_host_remote d6deeb
-set -g fish_color_keyword c792ea
+set -g fish_color_keyword 4437FB
 set -g fish_color_match c3ccdc --background=1d3b53
 set -g fish_color_normal bdc1c6
 set -g fish_color_operator ff5874
