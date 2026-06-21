@@ -1,39 +1,46 @@
 " Background and foreground
-let s:black       = '#011627'
-let s:white       = '#c3ccdc'
+let s:black        = '#011627'
+let s:white        = '#c3ccdc'
 " Variations of midnight-blue
-let s:black_blue  = '#081e2f'
-let s:dark_blue   = '#092236'
-let s:deep_blue   = '#0e293f'
-let s:slate_blue  = '#2c3043'
-let s:pickle_blue = '#38507a'
-let s:regal_blue  = '#1d3b53'
-let s:steel_blue  = '#4b6479'
-let s:grey_blue   = '#7c8f8f'
-let s:cadet_blue  = '#a1aab8'
-let s:ash_blue    = '#acb4c2'
-let s:white_blue  = '#d6deeb'
+let s:black_blue   = '#081e2f'
+let s:dark_blue    = '#092236'
+let s:ink_blue     = '#09243a'
+let s:deep_blue    = '#0e293f'
+let s:storm_blue   = "#1b2633"
+let s:stone_blue   = '#252c3f'
+let s:slate_blue   = '#2c3043'
+let s:pickle_blue  = '#38507a'
+let s:cello_blue   = '#1f4462'
+let s:regal_blue   = '#1d3b53'
+let s:carbon_blue  = '#334e65'
+let s:steel_blue   = '#4b6479'
+let s:grey_blue    = '#7c8f8f'
+let s:cadet_blue   = '#a1aab8'
+let s:ash_blue     = '#acb4c2'
+let s:white_blue   = '#d6deeb'
 " Core theme colors
-let s:yellow      = '#e3d18a'
-let s:peach       = '#ffcb8b'
-let s:tan         = '#ecc48d'
-let s:orange      = '#f78c6c'
-let s:orchid      = '#e39aa6'
-let s:red         = '#fc514e'
-let s:watermelon  = '#ff5874'
-"let s:violet      = '#c792ea'
-"let s:purple      = '#ae81ff'
-let s:violet     = '#4437FB'
-let s:purple     = '#481BF8'
-let s:indigo      = '#5e97ec'
-let s:blue        = '#82aaff'
-let s:malibu      = '#87bcff'
-let s:turquoise   = '#7fdbca'
-let s:emerald     = '#21c7a8'
-let s:green       = '#a1cd5e'
+let s:red          = '#fc514e'
+let s:watermelon   = '#ff5874'
+let s:orange       = '#f78c6c'
+let s:peach        = '#ffcb8b'
+let s:tan          = '#ecc48d'
+let s:yellow       = '#e3d18a'
+let s:orchid       = '#e39aa6'
+let s:lime         = '#85dc85'
+let s:green        = '#a1cd5e'
+let s:emerald      = '#21c7a8'
+let s:turquoise    = '#7fdbca'
+let s:malibu       = '#87bcff'
+let s:blue         = '#82aaff'
+let s:lavender     = "#b0b2f4"
+let s:violet       = '#4437FB'
+let s:purple       = '#481BF8'
 " Extra colors
-let s:cyan_blue   = '#296596'
-let s:bay_blue    = '#24567F'
+let s:cyan_blue    = '#316394'
+let s:bay_blue     = '#24567F'
+let s:kashmir      = '#4d618e'
+let s:plant        = '#2a4e57'
+let s:haze         = "#87a3ba"
 
 function! nightfly#Style() abort
     "-----------------------------------------------------------------------
@@ -44,7 +51,7 @@ function! nightfly#Style() abort
     exec 'highlight NightflyWhite guifg=' . s:white
     exec 'highlight NightflyDeepBlue guifg=' . s:deep_blue
     exec 'highlight NightflyPickleBlue guifg=' . s:pickle_blue
-    exec 'highlight NightflySlateBlue guifg=' . s:slate_blue
+    exec 'highlight NightflyCelloBlue guifg=' . s:cello_blue
     exec 'highlight NightflyRegalBlue guifg=' . s:regal_blue
     exec 'highlight NightflySteelBlue guifg=' . s:steel_blue
     exec 'highlight NightflyGreyBlue guifg=' . s:grey_blue
@@ -54,24 +61,19 @@ function! nightfly#Style() abort
     exec 'highlight NightflyYellow guifg=' . s:yellow
     exec 'highlight NightflyPeach guifg=' . s:peach
     exec 'highlight NightflyTan guifg=' . s:tan
-    exec 'highlight NightflyOrchid guifg=' . s:orchid
     exec 'highlight NightflyOrange guifg=' . s:orange
+    exec 'highlight NightflyOrchid guifg=' . s:orchid
     exec 'highlight NightflyRed guifg=' . s:red
     exec 'highlight NightflyWatermelon guifg=' . s:watermelon
-    exec 'highlight NightflyViolet guifg=' . s:violet
     exec 'highlight NightflyPurple guifg=' . s:purple
-    exec 'highlight NightflyIndigo guifg=' . s:indigo
+    exec 'highlight NightflyViolet guifg=' . s:violet
+    exec 'highlight NightflyLavender guifg=' . s:lavender
     exec 'highlight NightflyBlue guifg=' . s:blue
     exec 'highlight NightflyMalibu guifg=' . s:malibu
     exec 'highlight NightflyTurquoise guifg=' . s:turquoise
     exec 'highlight NightflyEmerald guifg=' . s:emerald
+    exec 'highlight NightflyLime guifg=' . s:lime
     exec 'highlight NightflyGreen guifg=' . s:green
-    " Misc helpers
-    exec 'highlight NightflyYellowAlert guibg=bg guifg=' . s:yellow
-    exec 'highlight NightflyOrangeAlert guibg=bg guifg=' . s:orange
-    exec 'highlight NightflyRedAlert guibg=bg guifg=' . s:red
-    exec 'highlight NightflyMalibuAlert guibg=bg guifg=' . s:malibu
-    exec 'highlight NightflyEmeraldAlert guibg=bg guifg=' . s:emerald
     " Statusline helper colors
     exec 'highlight NightflyBlueMode guibg=' . s:blue . ' guifg=' . s:dark_blue
     exec 'highlight NightflyEmeraldMode guibg=' . s:emerald . ' guifg=' . s:dark_blue
@@ -85,9 +87,17 @@ function! nightfly#Style() abort
     exec 'highlight NightflyDiagnosticUnderlineError gui=underline guisp=' . s:red
     exec 'highlight NightflyDiagnosticUnderlineWarn gui=underline guisp=' . s:yellow
     exec 'highlight NightflyDiagnosticUnderlineInfo gui=underline guisp=' . s:malibu
-    exec 'highlight NightflyDiagnosticVirtualTextError guibg=' . s:dark_blue . ' guifg=' . s:red
-    exec 'highlight NightflyDiagnosticVirtualTextWarn guibg=' . s:dark_blue . ' guifg=' . s:yellow
-    exec 'highlight NightflyDiagnosticVirtualTextInfo guibg=' . s:dark_blue . ' guifg=' . s:malibu
+    if g:nightflyVirtualTextColor
+        exec 'highlight NightflyDiagnosticVirtualTextError guibg=' . s:dark_blue . ' guifg=' . s:red
+        exec 'highlight NightflyDiagnosticVirtualTextWarn guibg=' . s:dark_blue . ' guifg=' . s:yellow
+        exec 'highlight NightflyDiagnosticVirtualTextInfo guibg=' . s:dark_blue . ' guifg=' . s:malibu
+        exec 'highlight NightflyDiagnosticVirtualTextHint guibg=' . s:dark_blue . ' guifg=' . s:turquoise
+    else
+        highlight! link NightflyDiagnosticVirtualTextError NightflySteelBlue
+        highlight! link NightflyDiagnosticVirtualTextWarn NightflySteelBlue
+        highlight! link NightflyDiagnosticVirtualTextInfo NightflySteelBlue
+        highlight! link NightflyDiagnosticVirtualTextHint NightflySteelBlue
+    endif
 
     "-----------------------------------------------------------------------
     " Standard styling
@@ -133,10 +143,10 @@ function! nightfly#Style() abort
     highlight! link Identifier NightflyTurquoise
 
     " Color of titles
-    exec 'highlight Title guifg=' . s:orange . ' gui=none'
+    exec 'highlight Title guifg=' . s:malibu . ' gui=none'
 
     " const, static
-    highlight! link StorageClass NightflyOrange
+    highlight! link StorageClass NightflyViolet
 
     " void, intptr_t
     exec 'highlight Type guifg=' . s:emerald . ' gui=none'
@@ -177,53 +187,69 @@ function! nightfly#Style() abort
     exec 'highlight Statement guifg=' . s:violet . ' gui=none'
 
     " struct, union, enum, typedef
-    highlight! link Structure NightflyIndigo
+    highlight! link Structure NightflyBlue
 
     " Statusline, splits and tab lines
-    exec 'highlight StatusLine cterm=none guibg=' . s:slate_blue . ' guifg=' . s:white . ' gui=none'
-    exec 'highlight StatusLineNC cterm=none guibg=' . s:slate_blue . ' guifg=' . s:cadet_blue . ' gui=none'
+    if g:nightflyTransparent
+        exec 'highlight StatusLine cterm=none guibg=' . s:black_blue . ' guifg=' . s:white . ' gui=none'
+        exec 'highlight StatusLineNC cterm=none guibg=' . s:black_blue . ' guifg=' . s:cadet_blue . ' gui=none'
+        exec 'highlight StatusLineTerm cterm=none guibg=' . s:black_blue . ' guifg=' . s:white . ' gui=none'
+        exec 'highlight StatusLineTermNC cterm=none guibg=' . s:black_blue . ' guifg=' . s:cadet_blue . ' gui=none'
+    else
+        exec 'highlight StatusLine cterm=none guibg=' . s:stone_blue . ' guifg=' . s:white . ' gui=none'
+        exec 'highlight StatusLineNC cterm=none guibg=' . s:stone_blue . ' guifg=' . s:cadet_blue . ' gui=none'
+        exec 'highlight StatusLineTerm cterm=none guibg=' . s:stone_blue . ' guifg=' . s:white . ' gui=none'
+        exec 'highlight StatusLineTermNC cterm=none guibg=' . s:stone_blue . ' guifg=' . s:cadet_blue . ' gui=none'
+    endif
     exec 'highlight Tabline cterm=none guibg=' . s:slate_blue . ' guifg=' . s:cadet_blue . ' gui=none'
-    exec 'highlight TablineSel cterm=none guibg=' . s:dark_blue . ' guifg=' . s:blue . ' gui=none'
-    exec 'highlight TablineSelSymbol cterm=none guibg=' . s:dark_blue . ' guifg=' . s:emerald . ' gui=none'
-    exec 'highlight TablineFill cterm=none guibg=' . s:slate_blue . ' guifg=' . s:slate_blue . ' gui=none'
-    exec 'highlight StatusLineTerm cterm=none guibg=' . s:slate_blue . ' guifg=' . s:white . ' gui=none'
-    exec 'highlight StatusLineTermNC cterm=none guibg=' . s:slate_blue . ' guifg=' . s:cadet_blue . ' gui=none'
+    exec 'highlight TablineSel cterm=none guibg=' . s:black_blue . ' guifg=' . s:blue . ' gui=none'
+    exec 'highlight TablineSelSymbol cterm=none guibg=' . s:black_blue . ' guifg=' . s:emerald . ' gui=none'
+    if g:nightflyTransparent
+        exec 'highlight TablineFill cterm=none guifg=' . s:slate_blue . ' gui=none'
+    else
+        exec 'highlight TablineFill cterm=none guibg=' . s:storm_blue . ' guifg=' . s:slate_blue . ' gui=none'
+    endif
     if g:nightflyWinSeparator == 0
         exec 'highlight VertSplit cterm=none guibg=' . s:black . ' guifg=' . s:black . ' gui=none'
     elseif g:nightflyWinSeparator == 1
-        exec 'highlight VertSplit cterm=none guibg=' . s:slate_blue . ' guifg=' . s:slate_blue . ' gui=none'
+        exec 'highlight VertSplit cterm=none guibg=' . s:stone_blue . ' guifg=' . s:stone_blue . ' gui=none'
     else
-        exec 'highlight VertSplit guibg=NONE guifg=' . s:slate_blue . ' gui=none'
+        exec 'highlight VertSplit guibg=NONE guifg=' . s:stone_blue . ' gui=none'
     end
 
     " Visual selection
     highlight! link Visual NightflyVisual
     exec 'highlight VisualNOS guibg=' . s:regal_blue . ' guifg=fg gui=none'
-    exec 'highlight VisualInDiff guibg=' . s:regal_blue . ' guifg=' . s:white
 
     " Errors, warnings and whitespace-eol
     exec 'highlight Error guibg=bg guifg=' . s:red
     exec 'highlight ErrorMsg guibg=bg guifg=' . s:red
     exec 'highlight WarningMsg guibg=bg guifg=' . s:orange
 
-    " Auto-text-completion menu
-    exec 'highlight Pmenu guibg=' . s:deep_blue . ' guifg=fg'
+    " Completions
+    if g:nightflyNormalPmenu
+        exec 'highlight Pmenu guibg=bg guifg=' . s:cadet_blue
+        exec 'highlight PmenuBorder guibg=bg guifg=' . s:slate_blue
+    else
+        exec 'highlight Pmenu guibg=' . s:ink_blue . ' guifg=fg'
+        exec 'highlight PmenuBorder guibg=' . s:ink_blue . ' guifg=' . s:carbon_blue
+    endif
     exec 'highlight PmenuSel guibg=' . s:cyan_blue . ' guifg=' . s:white_blue
-    exec 'highlight PmenuSbar guibg=' . s:deep_blue
+    exec 'highlight PmenuSbar guibg=' . s:ink_blue
     exec 'highlight PmenuThumb guibg=' . s:steel_blue
     exec 'highlight WildMenu guibg=' . s:cyan_blue . ' guifg=' . s:white_blue
 
     " Spelling errors
     if g:nightflyUndercurls
         exec 'highlight SpellBad ctermbg=NONE cterm=underline guibg=NONE gui=undercurl guisp=' . s:red
-        exec 'highlight SpellCap ctermbg=NONE cterm=underline guibg=NONE gui=undercurl guisp=' . s:blue
-        exec 'highlight SpellRare ctermbg=NONE cterm=underline guibg=NONE gui=undercurl guisp=' . s:yellow
-        exec 'highlight SpellLocal ctermbg=NONE cterm=underline guibg=NONE gui=undercurl guisp=' . s:blue
+        exec 'highlight SpellCap ctermbg=NONE cterm=underline guibg=NONE gui=undercurl guisp=' . s:yellow
+        exec 'highlight SpellRare ctermbg=NONE cterm=underline guibg=NONE gui=undercurl guisp=' . s:green
+        exec 'highlight SpellLocal ctermbg=NONE cterm=underline guibg=NONE gui=undercurl guisp=' . s:malibu
     else
         exec 'highlight SpellBad ctermbg=NONE cterm=underline guibg=NONE guifg=' . s:red . ' gui=underline guisp=' . s:red
-        exec 'highlight SpellCap ctermbg=NONE cterm=underline guibg=NONE guifg=' . s:blue . ' gui=underline guisp=' . s:blue
-        exec 'highlight SpellRare ctermbg=NONE cterm=underline guibg=NONE guifg=' . s:yellow . ' gui=underline guisp=' . s:yellow
-        exec 'highlight SpellLocal ctermbg=NONE cterm=underline guibg=NONE guifg=' . s:blue . ' gui=underline guisp=' . s:blue
+        exec 'highlight SpellCap ctermbg=NONE cterm=underline guibg=NONE guifg=' . s:yellow . ' gui=underline guisp=' . s:yellow
+        exec 'highlight SpellRare ctermbg=NONE cterm=underline guibg=NONE guifg=' . s:green . ' gui=underline guisp=' . s:green
+        exec 'highlight SpellLocal ctermbg=NONE cterm=underline guibg=NONE guifg=' . s:malibu . ' gui=underline guisp=' . s:malibu
     endif
 
     " Misc
@@ -239,9 +265,10 @@ function! nightfly#Style() abort
     exec 'highlight CursorLineNr cterm=none guibg=' . s:dark_blue . ' guifg=' . s:blue . ' gui=none'
     exec 'highlight CursorColumn guibg=' . s:dark_blue
     exec 'highlight CursorLine cterm=none guibg=' . s:dark_blue
-    exec 'highlight Folded guibg=' . s:dark_blue . ' guifg='. s:green
-    exec 'highlight FoldColumn guibg=' . s:slate_blue . ' guifg=' . s:green
-    exec 'highlight SignColumn guibg=bg guifg=' . s:green
+    highlight! link CursorLineSign CursorLine
+    exec 'highlight Folded guibg=' . s:dark_blue . ' guifg='. s:haze
+    exec 'highlight FoldColumn guibg=bg guifg=' . s:haze
+    exec 'highlight SignColumn guibg=bg guifg=' . s:haze
     exec 'highlight Todo guibg=' . s:deep_blue . ' guifg=' . s:yellow
     exec 'highlight SpecialKey guibg=bg guifg=' . s:blue
     if g:nightflyUnderlineMatchParen
@@ -262,77 +289,80 @@ function! nightfly#Style() abort
     exec 'highlight Conceal guibg=NONE guifg=' . s:ash_blue
 
     " vimdiff/nvim -d
-    exec 'highlight DiffAdd guibg=' . s:emerald . ' guifg=' . s:black
+    exec 'highlight DiffAdd guibg=' . s:plant
     exec 'highlight DiffChange guibg=' . s:slate_blue
     exec 'highlight DiffDelete guibg=' . s:slate_blue . ' guifg=' . s:steel_blue . ' gui=none'
-    exec 'highlight DiffText guibg=' . s:blue . ' guifg=' . s:black . ' gui=none'
+    exec 'highlight DiffText guibg=' . s:kashmir
 
     "-----------------------------------------------------------------------
     " Language styling
     "-----------------------------------------------------------------------
 
     " C
-    highlight! link cDefine NightflyViolet
-    highlight! link cPreCondit NightflyViolet
-    highlight! link cStatement NightflyViolet
-    highlight! link cStructure NightflyOrange
+    highlight! link cTypedef NightflyViolet
 
     " C++
-    highlight! link cppAccess NightflyGreen
+    highlight! link cppAccess NightflyViolet
     highlight! link cppCast NightflyTurquoise
     highlight! link cppCustomClass NightflyTurquoise
     highlight! link cppExceptions NightflyGreen
     highlight! link cppModifier NightflyViolet
     highlight! link cppOperator NightflyGreen
-    highlight! link cppSTLconstant NightflyIndigo
-    highlight! link cppSTLnamespace NightflyIndigo
+    highlight! link cppSTLconstant NightflyBlue
+    highlight! link cppSTLnamespace NightflyTurquoise
     highlight! link cppStatement NightflyTurquoise
     highlight! link cppStructure NightflyViolet
 
     " C#
-    highlight! link csModifier NightflyGreen
-    highlight! link csPrecondit NightflyViolet
+    highlight! link csModifier NightflyViolet
     highlight! link csStorage NightflyViolet
     highlight! link csXmlTag NightflyBlue
 
     " Clojure
     highlight! link clojureDefine NightflyViolet
-    highlight! link clojureKeyword NightflyTurquoise
-    highlight! link clojureMacro NightflyOrange
-    highlight! link clojureParen NightflyBlue
-    highlight! link clojureSpecial NightflyViolet
+    highlight! link clojureKeyword NightflyPurple
+    highlight! link clojureSpecial NightflyTurquoise
 
     " CoffeeScript
-    highlight! link coffeeConstant NightflyOrange
-    highlight! link coffeeGlobal NightflyWatermelon
-    highlight! link coffeeKeyword NightflyOrange
+    highlight! link coffeeConstant NightflyEmerald
+    highlight! link coffeeGlobal NightflyTurquoise
     highlight! link coffeeObject NightflyEmerald
     highlight! link coffeeObjAssign NightflyBlue
     highlight! link coffeeSpecialIdent NightflyTurquoise
     highlight! link coffeeSpecialVar NightflyBlue
-    highlight! link coffeeStatement NightflyOrange
+
+    " Crystal
+    highlight! link crystalDefine NightflyViolet
+    highlight! link crystalPseudoVariable NightflyGreen
 
     " CSS/SCSS
     highlight! link cssAtRule NightflyViolet
-    highlight! link cssAttr NightflyTurquoise
+    highlight! link cssAttr NightflyGreen
     highlight! link cssBraces NightflyWhite
     highlight! link cssClassName NightflyEmerald
     highlight! link cssClassNameDot NightflyViolet
-    highlight! link cssColor NightflyTurquoise
-    highlight! link cssIdentifier NightflyBlue
-    highlight! link cssProp NightflyTurquoise
+    highlight! link cssColor NightflyGreen
+    highlight! link cssIdentifier NightflyEmerald
+    highlight! link cssProp NightflyLavender
     highlight! link cssTagName NightflyBlue
     highlight! link cssUnitDecorators NightflyTan
-    highlight! link cssValueLength NightflyPurple
-    highlight! link cssValueNumber NightflyPurple
-    highlight! link sassId NightflyBlue
-    highlight! link sassIdChar NightflyViolet
+    highlight! link sassId NightflyEmerald
+    highlight! link sassIdChar NightflyWatermelon
     highlight! link sassMedia NightflyViolet
     highlight! link scssSelectorName NightflyBlue
 
+    " CSV
+    highlight! link csvCol0 NightflyRed
+    highlight! link csvCol1 NightflyOrange
+    highlight! link csvCol2 NightflyYellow
+    highlight! link csvCol3 NightflyGreen
+    highlight! link csvCol4 NightflyTurquoise
+    highlight! link csvCol5 NightflyBlue
+    highlight! link csvCol6 NightflyPurple
+    highlight! link csvCol7 NightflyViolet
+    highlight! link csvCol8 NightflyLavender
+
     " Dart
-    highlight! link dartMetadata NightflyGreen
-    highlight! link dartStorageClass NightflyViolet
     highlight! link dartTypedef NightflyViolet
 
     " Elixir
@@ -344,8 +374,8 @@ function! nightfly#Style() abort
     highlight! link elixirExUnitAssert NightflyGreen
     highlight! link elixirExUnitMacro NightflyBlue
     highlight! link elixirKernelFunction NightflyGreen
-    highlight! link elixirKeyword NightflyOrange
-    highlight! link elixirModuleDefine NightflyBlue
+    highlight! link elixirKeyword NightflyViolet
+    highlight! link elixirModuleDefine NightflyViolet
     highlight! link elixirPrivateDefine NightflyViolet
     highlight! link elixirStringDelimiter NightflyTan
     highlight! link elixirVariable NightflyTurquoise
@@ -353,7 +383,7 @@ function! nightfly#Style() abort
     " Elm
     highlight! link elmLetBlockDefinition NightflyGreen
     highlight! link elmTopLevelDecl NightflyOrange
-    highlight! link elmType NightflyBlue
+    highlight! link elmTypedef NightflyViolet
 
     " Go
     highlight! link goBuiltins NightflyBlue
@@ -374,13 +404,18 @@ function! nightfly#Style() abort
     highlight! link goUnsignedInts NightflyOrange
 
     " Haskell
-    highlight! link haskellDecl NightflyOrange
-    highlight! link haskellDeclKeyword NightflyOrange
-    highlight! link haskellIdentifier NightflyTurquoise
+    highlight! link haskellDecl NightflyViolet
+    highlight! link haskellDeclKeyword NightflyViolet
     highlight! link haskellLet NightflyBlue
-    highlight! link haskellOperators NightflyWatermelon
-    highlight! link haskellType NightflyBlue
+    highlight! link haskellOperators NightflyCranberry
     highlight! link haskellWhere NightflyViolet
+
+    " Help
+    highlight! link helpCommand NightflyOrchid
+    highlight! link helpExample NightflyGreen
+    highlight! link helpHeadline NightflyBlue
+    highlight! link helpHyperTextEntry NightflyTurquoise
+    highlight! link helpSectionDelim NightflyBlue
 
     " HTML
     highlight! link htmlArg NightflyTurquoise
@@ -388,9 +423,11 @@ function! nightfly#Style() abort
     highlight! link htmlEndTag NightflyPurple
     highlight! link htmlH1 NightflyWatermelon
     highlight! link htmlH2 NightflyOrange
+    highlight! link htmlSpecialTagName NightflyBlue
     highlight! link htmlTag NightflyGreen
     highlight! link htmlTagN NightflyBlue
     highlight! link htmlTagName NightflyBlue
+    highlight! link htmlTitle NightflyViolet
     highlight! link htmlUnderline NightflyWhite
     if g:nightflyItalics
         exec 'highlight htmlBoldItalic guibg=' . s:black . ' guifg=' . s:orange . ' gui=italic'
@@ -407,7 +444,6 @@ function! nightfly#Style() abort
     " Java
     highlight! link javaAnnotation NightflyGreen
     highlight! link javaBraces NightflyWhite
-    highlight! link javaClassDecl NightflyPeach
     highlight! link javaCommentTitle NightflyCadetBlue
     highlight! link javaConstant NightflyBlue
     highlight! link javaDebug NightflyBlue
@@ -421,59 +457,96 @@ function! nightfly#Style() abort
     highlight! link jsClassKeyword NightflyViolet
     highlight! link jsClassMethodType NightflyEmerald
     highlight! link jsExceptions NightflyEmerald
-    highlight! link jsFrom NightflyOrange
+    highlight! link jsFrom NightflyCranberry
     highlight! link jsFuncBlock NightflyTurquoise
     highlight! link jsFuncCall NightflyBlue
     highlight! link jsFunction NightflyViolet
     highlight! link jsGlobalObjects NightflyGreen
     highlight! link jsModuleAs NightflyOrange
-    highlight! link jsObjectKey NightflyBlue
+    highlight! link jsObjectKey NightflyLavender
     highlight! link jsObjectValue NightflyEmerald
     highlight! link jsOperator NightflyViolet
-    highlight! link jsStorageClass NightflyGreen
+    highlight! link jsStorageClass NightflyViolet
     highlight! link jsTemplateBraces NightflyWatermelon
     highlight! link jsTemplateExpression NightflyTurquoise
     highlight! link jsThis NightflyTurquoise
 
     " JSX, 'MaxMEllon/vim-jsx-pretty' plugin
-    highlight! link jsxAttrib NightflyGreen
+    highlight! link jsxAttrib NightflyTurquoise
     highlight! link jsxClosePunct NightflyPurple
-    highlight! link jsxComponentName NightflyBlue
+    highlight! link jsxComponentName NightflyEmerald
     highlight! link jsxOpenPunct NightflyGreen
     highlight! link jsxTagName NightflyBlue
 
+    " LaTeX
+    highlight! link texBeginEndName NightflyEmerald
+    highlight! link texCite NightflyGreen
+    highlight! link texDocType NightflyWatermelon
+    highlight! link texDocTypeArgs NightflyOrchid
+    highlight! link texInputFile String
+    highlight! link texMathZoneC NightflyMalibu
+    highlight! link texMathZoneX NightflyMalibu
+    highlight! link texRefZone NightflyGreen
+    highlight! link texSection NightflyLavender
+    highlight! link texTypeStyle NightflyYellow
+    highlight! link texZone NightflyLavender
+
     " Lua
-    highlight! link luaBraces NightflyWatermelon
+    highlight! link luaBraces NightflyEmerald
     highlight! link luaBuiltin NightflyGreen
+    highlight! link luaConstant NightflyWatermelon
     highlight! link luaFuncCall NightflyBlue
+    highlight! link luaFuncKeyword NightflyViolet
+    highlight! link luaLocal NightflyViolet
     highlight! link luaSpecialTable NightflyBlue
+    highlight! link luaSpecialValue NightflyBlue
+
+    " Man
+    highlight! link manHeader NightflyEmerald
+    highlight! link manOptionDesc NightflyOrchid
+    highlight! link manReference NightflyGreen
+    highlight! link manSectionHeading NightflyBlue
+    highlight! link manSubHeading NightflyTurquoise
 
     " Markdown, 'tpope/vim-markdown' plugin
     highlight! link markdownBold NightflyPeach
     highlight! link markdownCode NightflyTan
     highlight! link markdownCodeDelimiter NightflyTan
     highlight! link markdownError NormalNC
-    highlight! link markdownH1 NightflyBlue
+    highlight! link markdownH1 NightflyEmerald
     highlight! link markdownH2 NightflyBlue
+    highlight! link markdownH3 NightflyTurquoise
+    highlight! link markdownH3Delimiter NightflyWatermelon
+    highlight! link markdownH4 NightflyOrange
+    highlight! link markdownH4Delimiter NightflyWatermelon
+    highlight! link markdownH5 NightflyMalibu
+    highlight! link markdownH5Delimiter NightflyWatermelon
+    highlight! link markdownH6 NightflyViolet
+    highlight! link markdownH6Delimiter NightflyWatermelon
     highlight! link markdownHeadingRule NightflyWatermelon
-    highlight! link markdownItalic NightflyOrchid
-    highlight! link markdownUrl NightflyPurple
+    if g:nightflyItalics
+        exec 'highlight markdownItalic guifg=' . s:orchid . ' gui=italic'
+    else
+        highlight! link markdownItalic NightflyOrchid
+    endif
+    exec 'highlight markdownUrl guifg=' . s:purple. ' cterm=underline gui=underline guisp=' . s:grey_blue
 
     " Markdown, 'plasticboy/vim-markdown' plugin
     highlight! link mkdDelimiter NightflyWhite
     highlight! link mkdLineBreak NormalNC
     highlight! link mkdListItem NightflyBlue
-    highlight! link mkdURL NightflyPurple
+    highlight! link mkdURL markdownUrl
 
     " PHP
     highlight! link phpClass NightflyEmerald
-    highlight! link phpClasses NightflyIndigo
+    highlight! link phpClasses NightflyBlue
     highlight! link phpFunction NightflyBlue
     highlight! link phpParent NightflyWhite
     highlight! link phpType NightflyViolet
 
     " Python
     highlight! link pythonBuiltin NightflyBlue
+    highlight! link pythonClass NightflyEmerald
     highlight! link pythonClassVar NightflyGreen
     highlight! link pythonCoding NightflyBlue
     highlight! link pythonImport NightflyWatermelon
@@ -482,12 +555,11 @@ function! nightfly#Style() abort
     highlight! link pythonStatement NightflyViolet
 
     " Ruby
-    highlight! link rubyAccess NightflyYellow
+    highlight! link rubyAccess NightflyViolet
     highlight! link rubyAssertion NightflyBlue
     highlight! link rubyAttribute NightflyBlue
     highlight! link rubyBlockParameter NightflyGreen
     highlight! link rubyCallback NightflyBlue
-    highlight! link rubyClassName NightflyEmerald
     highlight! link rubyDefine NightflyViolet
     highlight! link rubyEntities NightflyBlue
     highlight! link rubyExceptional NightflyOrange
@@ -505,7 +577,7 @@ function! nightfly#Style() abort
     highlight! link rubySymbol NightflyPurple
 
     " Rust
-    highlight! link rustAssert NightflyGreen
+    highlight! link rustAssert NightflyTurquoise
     highlight! link rustAttribute NightflyWhite
     highlight! link rustCharacterInvalid NightflyWatermelon
     highlight! link rustCharacterInvalidUnicode NightflyWatermelon
@@ -521,13 +593,14 @@ function! nightfly#Style() abort
     highlight! link rustInvalidBareKeyword NightflyWatermelon
     highlight! link rustKeyword NightflyViolet
     highlight! link rustLifetime NightflyViolet
-    highlight! link rustMacro NightflyGreen
+    highlight! link rustMacro NightflyTurquoise
     highlight! link rustMacroVariable NightflyViolet
-    highlight! link rustModPath NightflyIndigo
+    highlight! link rustModPath NightflyTurquoise
+    highlight! link rustModPathSep NightflyWatermelon
     highlight! link rustObsoleteExternMod NightflyWatermelon
     highlight! link rustObsoleteStorage NightflyWatermelon
     highlight! link rustReservedKeyword NightflyWatermelon
-    highlight! link rustSelf NightflyTurquoise
+    highlight! link rustSelf NightflyGreen
     highlight! link rustSigil NightflyTurquoise
     highlight! link rustStorage NightflyViolet
     highlight! link rustStructure NightflyViolet
@@ -535,18 +608,20 @@ function! nightfly#Style() abort
     highlight! link rustType NightflyEmerald
 
     " Scala (note, link highlighting does not work, I don't know why)
-    exec 'highlight scalaCapitalWord guifg=' . s:blue
+    exec 'highlight scalaCapitalWord guifg=' . s:emerald
     exec 'highlight scalaCommentCodeBlock guifg=' . s:cadet_blue
-    exec 'highlight scalaInstanceDeclaration guifg=' . s:turquoise
-    exec 'highlight scalaKeywordModifier guifg=' . s:green
+    exec 'highlight scalaInstanceDeclaration guifg=' . s:emerald
+    exec 'highlight scalaKeywordModifier guifg=' . s:violet
     exec 'highlight scalaSpecial guifg=' . s:watermelon
 
-    " Shell scripts
+    " Shell
     highlight! link shAlias NightflyTurquoise
     highlight! link shCommandSub NightflyWhite
+    highlight! link shCtrlSeq NightflyTan
     highlight! link shLoop NightflyViolet
+    highlight! link shRange NightflyWhite
     highlight! link shSetList NightflyTurquoise
-    highlight! link shShellVariables NightflyGreen
+    highlight! link shShellVariables NightflyTurquoise
     highlight! link shVariable NightflyTurquoise
 
     " TypeScript (leafgarland/typescript-vim)
@@ -560,7 +635,7 @@ function! nightfly#Style() abort
     highlight! link typescriptOperator NightflyWatermelon
     highlight! link typescriptParens NightflyWhite
     highlight! link typescriptReserved NightflyViolet
-    highlight! link typescriptStorageClass NightflyGreen
+    highlight! link typescriptStorageClass NightflyViolet
 
     " TypeScript (HerringtonDarkholme/yats.vim)
     highlight! link typeScriptModule NightflyBlue
@@ -588,6 +663,7 @@ function! nightfly#Style() abort
     highlight! link typescriptParamImpl NightflyWhite
     highlight! link typescriptStringMethod NightflyBlue
     highlight! link typescriptTry NightflyWatermelon
+    highlight! link typescriptTypeReference NightflyEmerald
     highlight! link typescriptVariable NightflyGreen
     highlight! link typescriptXHRMethod NightflyBlue
 
@@ -602,20 +678,74 @@ function! nightfly#Style() abort
     highlight! link vimHighlight NightflyBlue
     highlight! link vimNotFunc NightflyViolet
     highlight! link vimNotation NightflyBlue
-    highlight! link vimOption NightflyTurquoise
+    highlight! link vimOption NightflyEmerald
     highlight! link vimParenSep NightflyWhite
     highlight! link vimSep NightflyWhite
     highlight! link vimUserFunc NightflyBlue
 
     " XML
-    highlight! link xmlAttrib NightflyGreen
+    highlight! link xmlAttrib NightflyLime
     highlight! link xmlEndTag NightflyBlue
     highlight! link xmlTag NightflyGreen
     highlight! link xmlTagName NightflyBlue
 
+    " Zig
+    highlight! link zigVarDecl NightflyViolet
+    highlight! link zigNull NightflyGreen
+
     "-----------------------------------------------------------------------
     " Plugin styling
     "-----------------------------------------------------------------------
+
+    " ALE plugin
+    if g:nightflyUndercurls
+        highlight! link ALEError NightflyDiagnosticUndercurlError
+        highlight! link ALEWarning NightflyDiagnosticUndercurlWarn
+        highlight! link ALEInfo NightflyDiagnosticUndercurlInfo
+    else
+        highlight! link ALEError NightflyDiagnosticUnderlineError
+        highlight! link ALEWarning NightflyDiagnosticUnderlineWarn
+        highlight! link ALEInfo NightflyDiagnosticUnderlineInfo
+    endif
+    highlight! link ALEErrorSign NightflyRed
+    highlight! link ALEWarningSign NightflyYellow
+    highlight! link ALEInfoSign NightflyMalibu
+    highlight! link ALEVirtualTextError NightflyDiagnosticVirtualTextError
+    highlight! link ALEVirtualTextWarning NightflyDiagnosticVirtualTextWarn
+    highlight! link ALEVirtualTextInfo NightflyDiagnosticVirtualTextInfo
+
+    " Coc
+    highlight! link CocSemTypeBuiltin NightflyWatermelon
+    highlight! link CocSemTypeClass NightflyEmerald
+    highlight! link CocSemTypeEnumMember NightflyTurquoise
+    highlight! link CocSemTypeNamespace NightflyTurquoise
+    highlight! link CocSemTypeParameter NightflyOrchid
+    highlight! link CocSemTypeProperty NightflyLavender
+    highlight! link CocSemTypeRegexp NightflyTurquoise
+    highlight! link CocSemTypeStruct NightflyEmerald
+    highlight! link CocSemTypeTypeParameter NightflyOrchid
+    highlight! link CocUnusedHighlight NightflyAshBlue
+    exec 'highlight CocInlayHint guibg=' . s:dark_blue . ' guifg=' . s:grey_blue
+    "   Coc virtual text
+    highlight! link CocErrorVirtualText NightflyDiagnosticVirtualTextError
+    highlight! link CocWarningVirtualText NightflyDiagnosticVirtualTextWarn
+    highlight! link CocInfoVirtualText NightflyDiagnosticVirtualTextInfo
+    highlight! link CocHintVirtualText NightflyDiagnosticVirtualTextHint
+
+    " fern.vim plugin
+    highlight! link FernBranchSymbol NightflyGreyBlue
+    highlight! link FernLeafSymbol NightflyBlue
+    highlight! link FernLeaderSymbol NightflyCelloBlue
+    highlight! link FernBranchText NightflyBlue
+    highlight! link FernMarkedLine NightflyVisual
+    highlight! link FernMarkedText NightflyWatermelon
+    highlight! link FernRootSymbol NightflyPurple
+    highlight! link FernRootText NightflyPurple
+
+    " fern-git-status.vim plugin
+    highlight! link FernGitStatusBracket NightflyGreyBlue
+    highlight! link FernGitStatusIndex NightflyEmerald
+    highlight! link FernGitStatusWorktree NightflyWatermelon
 
     " Git commits
     highlight! link gitCommitBranch NightflyBlue
@@ -629,21 +759,41 @@ function! nightfly#Style() abort
 
     " Git commit diffs
     highlight! link diffAdded NightflyGreen
-    highlight! link diffChanged NightflyWatermelon
+    highlight! link diffChanged NightflyMalibu
     highlight! link diffIndexLine NightflyWatermelon
     highlight! link diffLine NightflyBlue
     highlight! link diffRemoved NightflyRed
     highlight! link diffSubname NightflyBlue
 
-    " Tagbar plugin
-    highlight! link TagbarFoldIcon NightflyCadetBlue
-    highlight! link TagbarVisibilityPublic NightflyGreen
-    highlight! link TagbarVisibilityProtected NightflyGreen
-    highlight! link TagbarVisibilityPrivate NightflyGreen
-    highlight! link TagbarKind NightflyEmerald
+    " GitGutter plugin
+    highlight! link GitGutterAdd NightflyEmerald
+    highlight! link GitGutterChange NightflyMalibu
+    highlight! link GitGutterChangeDelete NightflyOrange
+    highlight! link GitGutterDelete NightflyRed
+
+    " Glyph palette
+    highlight! link GlyphPalette1 NightflyWatermelon
+    highlight! link GlyphPalette2 NightflyEmerald
+    highlight! link GlyphPalette3 NightflyYellow
+    highlight! link GlyphPalette4 NightflyBlue
+    highlight! link GlyphPalette6 NightflyTurquoise
+    highlight! link GlyphPalette7 NightflyWhite
+    highlight! link GlyphPalette9 NightflyWatermelon
+
+    " indentLine plugin
+    if !exists('g:indentLine_defaultGroup') && !exists('g:indentLine_color_gui')
+        let g:indentLine_color_gui = s:deep_blue
+    endif
+
+    " mistfly-statusline plugin
+    highlight! link MistflyNormal NightflyBlueMode
+    highlight! link MistflyInsert NightflyEmeraldMode
+    highlight! link MistflyVisual NightflyPurpleMode
+    highlight! link MistflyCommand NightflyTanMode
+    highlight! link MistflyReplace NightflyWatermelonMode
 
     " NERDTree plugin
-    highlight! link NERDTreeClosable NightflyCadetBlue
+    highlight! link NERDTreeClosable NightflyGreyBlue
     highlight! link NERDTreeCWD NightflyPurple
     highlight! link NERDTreeDir NightflyBlue
     highlight! link NERDTreeDirSlash NightflyWatermelon
@@ -654,7 +804,7 @@ function! nightfly#Style() abort
     highlight! link NERDTreeLinkDir NightflyBlue
     highlight! link NERDTreeLinkFile NightflyBlue
     highlight! link NERDTreeLinkTarget NightflyTurquoise
-    highlight! link NERDTreeOpenable NightflyCadetBlue
+    highlight! link NERDTreeOpenable NightflyGreyBlue
     highlight! link NERDTreePart NightflyRegalBlue
     highlight! link NERDTreePartFile NightflyRegalBlue
     highlight! link NERDTreeUp NightflyBlue
@@ -666,30 +816,6 @@ function! nightfly#Style() abort
     highlight! link NERDTreeGitStatusStaged NightflyBlue
     highlight! link NERDTreeGitStatusUntracked NightflyRed
 
-    " fern.vim plugin
-    highlight! link FernBranchSymbol NightflySteelBlue
-    highlight! link FernLeafSymbol NightflyBlue
-    highlight! link FernLeaderSymbol NightflyPickleBlue
-    highlight! link FernBranchText NightflyBlue
-    highlight! link FernMarkedLine NightflyVisual
-    highlight! link FernMarkedText NightflyWatermelon
-    highlight! link FernRootSymbol NightflyPurple
-    highlight! link FernRootText NightflyPurple
-
-    " fern-git-status.vim plugin
-    highlight! link FernGitStatusBracket NightflyGreyBlue
-    highlight! link FernGitStatusIndex NightflyEmerald
-    highlight! link FernGitStatusWorktree NightflyWatermelon
-
-    " Glyph palette
-    highlight! link GlyphPalette1 NightflyWatermelon
-    highlight! link GlyphPalette2 NightflyEmerald
-    highlight! link GlyphPalette3 NightflyYellow
-    highlight! link GlyphPalette4 NightflyBlue
-    highlight! link GlyphPalette6 NightflyTurquoise
-    highlight! link GlyphPalette7 NightflyWhite
-    highlight! link GlyphPalette9 NightflyWatermelon
-
     " Misc items
     highlight! link bufExplorerHelp NightflyCadetBlue
     highlight! link bufExplorerSortBy NightflyCadetBlue
@@ -697,12 +823,10 @@ function! nightfly#Style() abort
     highlight! link CtrlPMatch NightflyOrange
     highlight! link Directory NightflyBlue
     highlight! link erubyDelimiter NightflyWatermelon
-    highlight! link helpHeadline NightflyBlue
-    highlight! link helpSectionDelim NightflyBlue
     highlight! link HighlightedyankRegion NightflyRegalBlue
-    highlight! link jsonKeyword NightflyBlue
-    highlight! link jsonBoolean NightflyTurquoise
+    highlight! link jsonKeyword NightflyLavender
     highlight! link jsonQuote NightflyWhite
+    highlight! link jsonString NightflyLime
     highlight! link netrwClassify NightflyWatermelon
     highlight! link netrwDir NightflyBlue
     highlight! link netrwExe NightflyTan
@@ -717,78 +841,43 @@ function! nightfly#Style() abort
     endif
     exec 'highlight snipLeadingSpaces guibg=bg guifg=fg'
     exec 'highlight MatchWordCur guibg=bg'
-
-    " ALE plugin
-    if g:nightflyUndercurls
-        highlight! link ALEError NightflyDiagnosticUndercurlError
-        highlight! link ALEWarning NightflyDiagnosticUndercurlWarn
-        highlight! link ALEInfo NightflyDiagnosticUndercurlInfo
-    else
-        highlight! link ALEError NightflyDiagnosticUnderlineError
-        highlight! link ALEWarning NightflyDiagnosticUnderlineWarn
-        highlight! link ALEInfo NightflyDiagnosticUnderlineInfo
-    endif
-    highlight! link ALEErrorSign NightflyRedAlert
-    highlight! link ALEWarningSign NightflyYellowAlert
-    highlight! link ALEInfoSign NightflyMalibuAlert
-    if g:nightflyVirtualTextColor
-        highlight! link ALEVirtualTextError NightflyDiagnosticVirtualTextError
-        highlight! link ALEVirtualTextWarning NightflyDiagnosticVirtualTextWarn
-        highlight! link ALEVirtualTextInfo NightflyDiagnosticVirtualTextInfo
-    else
-        highlight! link ALEVirtualTextError NightflySteelBlue
-        highlight! link ALEVirtualTextWarning NightflySteelBlue
-        highlight! link ALEVirtualTextInfo NightflySteelBlue
-    endif
-
-    " GitGutter plugin
-    highlight! link GitGutterAdd NightflyEmeraldAlert
-    highlight! link GitGutterChange NightflyMalibuAlert
-    highlight! link GitGutterChangeDelete NightflyOrangeAlert
-    highlight! link GitGutterDelete NightflyRedAlert
+    highlight! link fishInnerVariable NightflyTurquoise
+    highlight! link fishParameter NightflyTurquoise
+    highlight! link fishVariable NightflyTurquoise
 
     " Signify plugin
-    highlight! link SignifySignAdd NightflyEmeraldAlert
-    highlight! link SignifySignChange NightflyMalibuAlert
-    highlight! link SignifySignChangeDelete NightflyOrangeAlert
-    highlight! link SignifySignDelete NightflyRedAlert
+    highlight! link SignifySignAdd NightflyEmerald
+    highlight! link SignifySignChange NightflyMalibu
+    highlight! link SignifySignChangeDelete NightflyOrange
+    highlight! link SignifySignDelete NightflyRed
+
+    " Tagbar plugin
+    highlight! link TagbarFoldIcon NightflyCadetBlue
+    highlight! link TagbarVisibilityPublic NightflyGreen
+    highlight! link TagbarVisibilityProtected NightflyGreen
+    highlight! link TagbarVisibilityPrivate NightflyGreen
+    highlight! link TagbarKind NightflyEmerald
 
     " FZF plugin
-    exec 'highlight fzf1 guifg=' . s:watermelon . ' guibg=' . s:slate_blue
-    exec 'highlight fzf2 guifg=' . s:blue . ' guibg=' . s:slate_blue
-    exec 'highlight fzf3 guifg=' . s:green . ' guibg=' . s:slate_blue
-    exec 'highlight fzfNormal guifg=' . s:ash_blue
-    exec 'highlight fzfFgPlus guifg=' . s:white_blue
-    exec 'highlight fzfBorder guifg=' . s:slate_blue
-    exec 'highlight fzfSubstring guifg=' . s:orange
+    exec 'highlight FzfBorder guifg=' . s:slate_blue
+    exec 'highlight FzfFgPlus guifg=' . s:white_blue
+    exec 'highlight FzfNormal guifg=' . s:ash_blue
+    exec 'highlight FzfPrompt guifg=' . s:blue . ' guibg=' . s:slate_blue
+    exec 'highlight FzfSubstring guifg=' . s:orange
     let g:fzf_colors = {
-      \  'fg':      ['fg', 'fzfNormal'],
+      \  'fg':      ['fg', 'FzfNormal'],
       \  'bg':      ['bg', 'Normal'],
-      \  'hl':      ['fg', 'fzfSubstring'],
-      \  'fg+':     ['fg', 'fzfFgPlus'],
+      \  'hl':      ['fg', 'FzfSubstring'],
+      \  'fg+':     ['fg', 'FzfFgPlus'],
       \  'bg+':     ['bg', 'Pmenu'],
-      \  'hl+':     ['fg', 'fzfSubstring'],
+      \  'hl+':     ['fg', 'FzfSubstring'],
       \  'info':    ['fg', 'String'],
-      \  'border':  ['fg', 'fzfBorder'],
-      \  'prompt':  ['fg', 'fzf2'],
+      \  'border':  ['fg', 'FzfBorder'],
+      \  'prompt':  ['fg', 'FzfPrompt'],
       \  'pointer': ['fg', 'Exception'],
-      \  'marker':  ['fg', 'StorageClass'],
+      \  'marker':  ['fg', 'FzfSubstring'],
       \  'spinner': ['fg', 'Type'],
-      \  'header':  ['fg', 'CursorLineNr']
+      \  'header':  ['fg', 'CursorLineNr'],
+      \  'gutter':  ['bg', 'Normal']
       \}
-
-    " mistfly-statusline plugin
-    highlight! link MistflyNormal NightflyBlueMode
-    highlight! link MistflyInsert NightflyEmeraldMode
-    highlight! link MistflyVisual NightflyPurpleMode
-    highlight! link MistflyCommand NightflyTanMode
-    highlight! link MistflyReplace NightflyWatermelonMode
-
-    " Coc plugin (see issue: https://github.com/bluz71/vim-nightfly-colors/issues/31)
-    highlight! link CocUnusedHighlight NightflyAshBlue
-
-    " indentLine plugin
-    if !exists('g:indentLine_defaultGroup') && !exists('g:indentLine_color_gui')
-        let g:indentLine_color_gui = s:deep_blue
-    endif
 endfunction
